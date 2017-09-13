@@ -1,0 +1,3 @@
+- name: Install Apache on Ubuntu
+  apt: pkg='{{ debian_apache}}' state=latest
+  when: ansible_os_family == "Debian"

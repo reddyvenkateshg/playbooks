@@ -1,0 +1,9 @@
+--- # when playbook 2nd example
+- hosts: demo
+  user: venkatesh
+  sudo: yes
+  connection: ssh
+  tasks:
+    - command: echo {{ item }}
+      with_items: { 0,3,5,6,10,9,2}
+      when: item > 5 

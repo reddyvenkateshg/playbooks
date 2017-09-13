@@ -1,0 +1,15 @@
+--- # My First YAML playbook
+- hosts: demo
+  user: venkatesh
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  vars_prompt:
+   - name: pkgname
+     prompt: Enter the package to install
+  tasks:
+    - name: Install HTTPD server on centos 7
+      action: yum name='{{ pkgname}}' state=installed
+    - name: Restart HTTPD  # ihis has to match the notify name  #
+      action: service name=httpd state=restarted
+

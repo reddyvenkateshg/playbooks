@@ -1,0 +1,15 @@
+--- # Tag functionality playbook
+- hosts: demo
+  user: venkatesh
+  sudo: yes
+  connection: ssh
+  tasks:
+   - name: firstname
+     raw: echo "Reddy" > /tmp/LOG
+     tags:
+      - firstname
+   - name: secondname
+     raw: echo "venkatesh" > /tmp/LOG
+     tags:
+      - secondname
+

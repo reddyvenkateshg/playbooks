@@ -1,0 +1,7 @@
+--- # master playbook for web services
+- hosts: demo
+  user: venkatesh
+  sudo: yes
+  connection: ssh
+  roles:
+    - webservers

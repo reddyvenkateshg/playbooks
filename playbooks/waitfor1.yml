@@ -1,0 +1,12 @@
+--- # Running tasks waitfor
+- hosts: local
+  user: venkatesh
+  connection: ssh
+  gather_facts: no
+  sudo: yes
+  tasks:
+    - name: Install Apache on centos
+      yum: pkg=httpd state=latest
+    - name: wait for the service to check if file exists
+      wait_for:
+        path: /tmp/WAITFORME

@@ -1,0 +1,6 @@
+- name: Install Apache
+  action: yum name=httpd state=installed
+  async: 300
+  poll: 3
+  notify: Restart HTTPD
+

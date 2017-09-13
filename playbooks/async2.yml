@@ -1,0 +1,12 @@
+--- # Running tasks parallel
+- hosts: demo
+  user: venkatesh
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+    - include: include.yml
+  handlers:
+    - name: Restart HTTPD  # This has to match the notify name  #
+      action: service name=httpd state=restarted
+
